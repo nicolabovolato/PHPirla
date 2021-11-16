@@ -25,4 +25,4 @@ This attack will exploit the reviews to grab the cookie of any user that visits 
 
 ## Mitigation
 
-Wrap the search query text in [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php) function
+Wrap the received message text in [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php) function
