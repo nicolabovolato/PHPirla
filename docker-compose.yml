@@ -1,0 +1,30 @@
+version: '3.9'
+services:
+  apache:
+    build:
+      context: .
+      dockerfile: php.Dockerfile
+    restart: always
+    volumes:
+      - ./html/:/var/www/html/
+    ports:
+      - 5000:80
+
+  mysql:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: bank
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  phpmyadmin:
+    image: phpmyadmin:5-apache
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: example
+    ports:
+      - 5001:80
