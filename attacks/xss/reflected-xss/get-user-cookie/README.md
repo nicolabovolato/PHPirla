@@ -17,4 +17,6 @@ This attack will exploit the search function on the movements page to grab the c
 
 ## Mitigation
 
-Wrap the search query text in [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php) function
+- Sanitize sent and received data [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php) function
+- Use appropriate response headers
+- Use Content Security Policy

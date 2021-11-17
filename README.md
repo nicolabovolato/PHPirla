@@ -8,6 +8,8 @@ Displaying some xss vulnerabilities on the average PHP website.
 
 ## Attacks
 
-- [Steal cookie of a user](./attacks/reflected-xss/get-user-cookie)
-- [Steal cookie of all users](./attacks/reflected-xss/get-user-cookie)
-- [Transfer funds to your account](./attacks/stored-xss/transfer-funds)
+### XSS
+
+- [Steal cookie of a user](./attacks/xss/reflected-xss/get-user-cookie)
+- [Steal cookie of all users](./attacks/xss/reflected-xss/get-user-cookie)
+- [Transfer funds to your account](./attacks/xss/stored-xss/transfer-funds)

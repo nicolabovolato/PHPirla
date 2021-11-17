@@ -23,4 +23,6 @@ This attack will exploit the reviews to transfer to you bank account an amount o
 
 ## Mitigation
 
-Wrap the received message text in [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php) function
+- Sanitize sent and received data [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php) function
+- Use appropriate response headers
+- Use Content Security Policy
