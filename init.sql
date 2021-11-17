@@ -3,14 +3,14 @@ CREATE TABLE users (
     `username` VARCHAR(64) unique NOT NULL,
     `password` VARCHAR(64) NOT NULL,
     `iban` CHAR(27) unique NOT NULL,
-    `balance` DECIMAL DEFAULT 0 NOT NULL
+    `balance` DECIMAL(16,2) DEFAULT 0 NOT NULL
 );
 
 CREATE TABLE transactions (
     `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `datetime` DATETIME NOT NULL DEFAULT NOW(),
     `notes` VARCHAR(128) NOT NULL,
-    `amount` DECIMAL NOT NULL,
+    `amount` DECIMAL(16,2) NOT NULL,
     `from_iban` CHAR(27) NOT NULL,
     `to_iban` CHAR(27) NOT NULL
 );
