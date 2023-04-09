@@ -2,6 +2,8 @@
 
 Displaying some xss vulnerabilities on the average PHP website.
 
+![](img.png)
+
 ## Run the app
 
 ### `docker-compose up -d` and [open the browser](http://localhost:8080)
